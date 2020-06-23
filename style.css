@@ -1,0 +1,67 @@
+body{
+    margin: 0;
+    padding: 10vh 5%;
+}
+section{
+    height: 150px;
+    width: 700px;
+    background: lightgray;
+    position: relative;
+    border: 2px solid darkslategray;
+}
+div:nth-of-type(1){
+    font-size: 16px;
+    padding: 66px 0;
+    width: 150px;
+    background: linear-gradient(to right, red,blue);
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    transition: .5s left linear;
+}
+div:nth-of-type(2){
+    width: 75px;
+    height: 75px;
+    background: linear-gradient(to right, red,blue);
+    border-radius: 50%;
+    position: absolute;
+    top: 75px;
+    left: 250px;
+    transition: 2.5s left linear .5s;
+}
+div:nth-of-type(1):active{
+    left: 110px;
+    animation: sirene .5s 1;
+}
+div:nth-of-type(1):active~div:nth-of-type(2){
+    left: 625px;
+    animation: sirene .5s 5;
+    animation-delay: .5s;
+}
+@keyframes sirene{
+    0%, 100% {
+        background: linear-gradient(to right, red,blue);
+    }
+    12.5% {
+        background: linear-gradient(to bottom right,red,blue)
+    }
+    25% {
+        background: linear-gradient(to bottom, red,blue)
+    }
+    37.5% {
+        background: linear-gradient(to bottom left,red,blue)
+    }
+    50% {
+        background: linear-gradient(to left, red,blue);
+    }
+    62.5 {
+        background: linear-gradient(to top left, red,blue)
+    }
+    75% {
+        background: linear-gradient(to top, red,blue)
+    }
+    77.5%{
+        background: linear-gradient(to top right, red,blue)
+    }
+}
